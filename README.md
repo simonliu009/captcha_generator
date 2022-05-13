@@ -3,7 +3,7 @@
 ![在这里插入图片描述](./resource/1.png)
 # 参数解析
 在上述案例中，完整命令为
-```python
+```shell
 python captcha_gen.py w=210 h=100 n=6 c=2 fontsize=[40,50,60]
 ```
 其中：
@@ -14,3 +14,9 @@ python captcha_gen.py w=210 h=100 n=6 c=2 fontsize=[40,50,60]
 - `fontsize=[40,50,60]`指定验证码字体大小（单个字符的字体大小从中随机选取）
 
 参数默认值都写在代码里了。
+其他例子：
+```shell
+python captcha_gen.py w=210 h=100 n=4 c=100
+python captcha_gen.py n=6 c=100
+python captcha_gen.py
+```
