@@ -68,16 +68,21 @@ def main():
     global img_width, img_height, count, labelno
     get_argv()
     # 保存路径
-    path = f'{img_width}x{img_height}-{labelno}chars'
+    path1 = f'{img_width}x{img_height}-{labelno}chars'
+    path = os.path.join('img',path1)
     print('save path:',path)
     if not os.path.exists(path):
         os.makedirs(path)
-    for i in range(count):
+    for i in range(count+1):
         now = str(int(time.time()))
         text, image = gen_captcha_text_and_image()
         filename = text+'_'+now+'.png'
         image.save(path  + os.path.sep +  filename)
-        print('saved %d : %s' % (i+1,filename))
+        #        print('saved %d : %s' % (i+1,filename))
+        # print('.',end='')
+        if i%100 == 0 and i > 0:
+            print('saved  %d files'%i)
+    print("%d files were generated in total."%count)
 
 if __name__ == '__main__':
     main()
